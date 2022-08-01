@@ -18,12 +18,21 @@ import { HomepageComponent } from './homepage/homepage.component';
 @NgModule({
   declarations: [
     AppComponent,
+    HomepageComponent,
+    UserRegisterComponent,
+    UserLoginComponent,
+    UserDashboardComponent,
+    LessonBrowserComponent,
+    LessonDetailComponent,
+    LessonCreatorComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-      { path: '' }
+      { path: '', component: HomepageComponent },
+      { path: 'register', component: UserRegisterComponent },
+      { path: 'login', component: UserLoginComponent }
     ]),
     HttpClientModule
   ],
