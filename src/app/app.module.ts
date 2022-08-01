@@ -18,13 +18,6 @@ import { HomepageComponent } from './homepage/homepage.component';
 @NgModule({
   declarations: [
     AppComponent,
-    UserRegisterComponent,
-    UserLoginComponent,
-    UserDashboardComponent,
-    LessonBrowserComponent,
-    LessonDetailComponent,
-    LessonCreatorComponent,
-    HomepageComponent
   ],
   imports: [
     BrowserModule,
