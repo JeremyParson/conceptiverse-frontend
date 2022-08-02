@@ -1,1 +1,19 @@
-<p>user-register works!</p>
+<h2>Registration</h2>
+
+<form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+    <label>Email</label>
+    <input type="text" formControlName="email" />
+    <br/>
+    <label>Username</label>
+    <input type="text" formControlName="username" />
+    <br/>
+    <label>Password</label>
+    <input type="text" formControlName="password" />
+    <br/>
+    <label>Confirm Password</label>
+    <input type="text" formControlName="confirmPassword" />
+    <br/>
+    <button type="submit">Register</button>
+</form>
+
+<a [routerLink]="['..']">Cancel</a>

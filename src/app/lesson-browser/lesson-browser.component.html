@@ -1,1 +1,8 @@
-<p>lesson-browser works!</p>
+<div *ngFor="let lesson of lessons | async">
+    <div>
+        <h2>{{lesson.name}}</h2>
+        <p><b>{{lesson.chapters.length}} Chapters</b></p>
+        <p>{{lesson.description}}</p>
+        <button [routerLink]="[lesson._id]">Learn More</button>
+    </div>
+</div>

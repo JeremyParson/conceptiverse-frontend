@@ -1,1 +1,20 @@
-<p>user-login works!</p>
+<span *ngIf="!userLoggedIn">
+    <button *ngIf="!showLoginForm" (click)="setShowLoginForm(true)">Login</button>
+    <form *ngIf="showLoginForm" [formGroup]="loginInfoGroup" (ngSubmit)="onSubmit()">
+        <label>Email</label>
+        <br />
+        <input type="text" formControlName="email">
+        <br />
+        <label>Password</label>
+        <br />
+        <input type="text" formControlName="password">
+        <br />
+        <button type="submit">Submit</button>
+        <button (click)="setShowLoginForm(false)">Cancel</button>
+    </form>
+</span>
+
+<span *ngIf="userLoggedIn">
+    {{userInfo.username}}
+    <button (click)="logout()">Logout</button>
+</span>

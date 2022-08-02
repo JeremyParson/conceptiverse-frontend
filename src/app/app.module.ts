@@ -32,7 +32,9 @@ import { HomepageComponent } from './homepage/homepage.component';
     RouterModule.forRoot([
       { path: '', component: HomepageComponent },
       { path: 'register', component: UserRegisterComponent },
-      { path: 'login', component: UserLoginComponent }
+      { path: 'login', component: UserLoginComponent },
+      { path: 'browser', component: LessonBrowserComponent },
+      { path: 'browser/:id', component: LessonDetailComponent },
     ]),
     HttpClientModule
   ],
