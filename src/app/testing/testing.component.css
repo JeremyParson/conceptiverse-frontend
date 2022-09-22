@@ -1,0 +1,31 @@
+.test-container {
+  width: 98vw;
+  height: 80vh;
+  border: 1px black solid;
+  display: flex;
+}
+
+.content {
+  width: 50%;
+}
+
+.test-container > section {
+  width: 50%;
+  height: 100%;
+}
+
+.text-editor {
+  border-left: 1px black solid;
+  height: 70%;
+}
+
+.test-results {
+  overflow-y: scroll;
+  border-left: 1px black solid;
+  height: 30%;
+  background-color: gainsboro;
+}
+
+#code-editor {
+  height: 100%;
+}

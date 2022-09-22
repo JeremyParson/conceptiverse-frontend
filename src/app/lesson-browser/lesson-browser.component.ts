@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LessonService } from '../lesson.service';
+import { LessonService } from '../services/lesson.service';
 
 @Component({
   selector: 'app-lesson-browser',

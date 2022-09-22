@@ -1,0 +1,15 @@
+<div class="result-card {{results.passed ? 'passed' : 'failed'}}-result">
+  <h3 *ngIf="results?.error; else elseBlock">Error {{results.time}}</h3>
+
+  <ng-template #elseBlock>
+    <h3 (click)="toggleDisplayFull()">{{results.passed ? 'Passed' : 'Failed'}} ({{results.passCount}}/{{results.results.length}}) {{results.time}}</h3>
+    <ng-template [ngIf]="displayFull">
+      <div *ngFor="let result of results.results" class="test-case-result">
+        <p>{{result.status}}</p>
+        <p>Inputs: {{result.inputs}}</p>
+        <p>Expected: {{result.expected}}</p>
+        <p>Got: {{result.output}}</p>
+      </div>
+    </ng-template>
+  </ng-template>
+</div>

@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http'
 import { RouterModule } from '@angular/router';
+import { CodeEditorModule } from '@ngstack/code-editor';
 
 // App Components
 import { AppComponent } from './app.component';
@@ -14,6 +15,8 @@ import { LessonBrowserComponent } from './lesson-browser/lesson-browser.componen
 import { LessonDetailComponent } from './lesson-detail/lesson-detail.component';
 import { LessonCreatorComponent } from './lesson-creator/lesson-creator.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { TestingComponent } from './testing/testing.component';
+import { ResultCardComponent } from './result-card/result-card.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,9 @@ import { HomepageComponent } from './homepage/homepage.component';
     UserDashboardComponent,
     LessonBrowserComponent,
     LessonDetailComponent,
-    LessonCreatorComponent
+    LessonCreatorComponent,
+    TestingComponent,
+    ResultCardComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,8 +40,10 @@ import { HomepageComponent } from './homepage/homepage.component';
       { path: 'login', component: UserLoginComponent },
       { path: 'browser', component: LessonBrowserComponent },
       { path: 'browser/:id', component: LessonDetailComponent },
+      { path: 'testing/:id', component: TestingComponent }
     ]),
-    HttpClientModule
+    HttpClientModule,
+    CodeEditorModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

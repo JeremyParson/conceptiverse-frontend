@@ -7,12 +7,21 @@ import { tap } from 'rxjs';
 })
 export class LessonService {
   constructor(private http: HttpClient) {}
-  url = 'http://localhost:8000/lesson';
+  url = 'http://localhost:8000/lesson/';
 
   getLessons() {
     return this.http.get<[Lesson]>(this.url).pipe(
       tap({
         next: (data) => console.log('Lessons', data),
+        error: (err) => console.error(err),
+      })
+    );
+  }
+
+  detailLesson(id: string) {
+    return this.http.get<Lesson>(`${this.url}${id}`).pipe(
+      tap({
+        next: (data) => console.log(`Lesson Detail ${id}`, data),
         error: (err) => console.error(err),
       })
     );

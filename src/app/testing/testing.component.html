@@ -1,0 +1,19 @@
+<h2>{{lesson.chapters[chapterIndex].name}}</h2>
+<main class="test-container">
+  <aside class="content">{{lesson.chapters[chapterIndex].content}}</aside>
+  <section>
+    <div class="text-editor">
+      <ngs-code-editor [codeModel]="codeModel" (valueChanged)="processChange($event)" id="code-editor">
+      </ngs-code-editor>
+    </div>
+    <div class="test-results">
+      <div *ngFor="let result of results">
+       <app-result-card [results]="result"></app-result-card>
+      </div>
+    </div>
+  </section>
+</main>
+<footer>
+  <button (click)="runTest()">Run Tests</button>
+  <button (click)="nextChapter()">Next Chapter</button>
+</footer>

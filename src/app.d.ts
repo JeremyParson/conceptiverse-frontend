@@ -9,9 +9,9 @@ interface Lesson {
   name: string;
   description: string;
   rating: number;
-  comments: [string];
+  comments: string[];
   creator: string;
-  chapters: [Chapter];
+  chapters: Chapter[];
 }
 
 interface Chapter {
@@ -25,6 +25,7 @@ interface Chapter {
 }
 
 interface Test {
+  [key: string]: string | [TestCase];
   _id: string;
   chapter: string;
   testType: string;
@@ -44,7 +45,39 @@ interface Test {
 interface TestCase {
   _id: string;
   test: string;
-  parameters: [any];
+  parameters: any[];
   expectedOutput: any;
   creator: string;
+}
+
+interface Results {
+  results: [
+    {
+      expected: string,
+      inputs: string,
+      output: string,
+      status: string
+    }
+  ],
+  error?: string,
+  passCount: number,
+  passed: boolean,
+  time: string,
+}
+
+interface Solution {
+  [key: string]: string,
+  _id: string,
+  javascript: string,
+  cpp: string,
+  rust: string,
+  python: string,
+  java: string,
+  test: string,
+  creator: string,
+}
+
+import { ObservableInput } from "rxjs";
+export interface Suspenseable {
+  setup(): ObservableInput<any>;
 }

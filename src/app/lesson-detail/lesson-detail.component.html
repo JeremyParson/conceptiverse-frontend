@@ -1,1 +1,10 @@
-<p>lesson-detail works!</p>
+<h2>{{lesson.name}}</h2>
+<p><b>{{lesson.chapters.length}} Chapters</b></p>
+<p>{{lesson.description}}</p>
+<h3>Chapters</h3>
+<section class="chapter-section">
+  <div *ngFor="let chapter of lesson.chapters">
+    <h4>{{chapter.name}}</h4>
+  </div>
+</section>
+<button [routerLink]="['/testing', lesson._id]">Start</button>

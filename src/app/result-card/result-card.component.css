@@ -1,0 +1,16 @@
+.failed-result {
+  background-color: rgb(255, 131, 122);
+}
+
+.passed-result {
+  background-color: rgb(145, 250, 147);
+}
+
+.result-card {
+  border: 1px black solid;
+}
+
+.test-case-result {
+  margin: 1em;
+  border: 1px black solid;
+}
