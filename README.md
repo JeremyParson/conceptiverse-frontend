@@ -1,3 +1,6 @@
+# Summary
+The Conceptiverse is a code testing web app that provides tools for creating lessons related to computer science topics. Users can either complete lessons made by others or create their own.
+
 # Frontend
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0.
